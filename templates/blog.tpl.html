@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <!--左侧内容-->
+    <div class="col-sm-9">
+      <!--统计图-->
+      <blog-charts></blog-charts>
+      <!--最新技术-->
+      <blog-technology></blog-technology>
+      <!--分享知识-->
+      <blog-share></blog-share>
+      <!--文章更新-->
+      <blog-artical></blog-artical>
+      <!--评论框-->
+      <blog-froala (froala)="froalaText($event)"></blog-froala>
+      <p></p>
+      <p class="text-right"><button (click)="messageHandel()">评论</button></p>
+      <!--评论信息-->
+      <blog-message></blog-message>
+    </div>
+    <div class="col-sm-3">
+      <!-- 右侧广告, 新闻等等 -->
+      <blog-news></blog-news>
+      <!--标签-->
+      <blog-label></blog-label>
+      <!--朋友-->
+      <blog-users></blog-users>
+      <!--统计-->
+      <blog-rcharts></blog-rcharts>
+    </div>
+  </div>
+</div>

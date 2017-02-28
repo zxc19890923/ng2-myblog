@@ -1,0 +1,9 @@
+<ul class="list-group" style="margin: 0; padding: 0">
+  <li class="list-group-item" *ngFor="let item of data" style="border: none; border-top: 1px dotted #aaa">
+    <p innerHTML="{{item.message}}"></p>
+    <p class="text-right" style="color: #aaa">
+      {{item.author}} {{item.time}}
+    </p>
+  </li>
+</ul>
+

@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      文章更新
+    </div>
+  </div>
+  <div class="panel-body">
+    <ul class="list-group" style="margin: 0; padding: 0">
+      <li class="list-group-item" *ngFor="let item of data; let i = index">
+        <img src="./app/images/ng2.svg" style="width: 45px; height: 45px; margin-right: 10px"
+             class="pull-left"/>
+        <div class="block">
+          <a routerLink="/artical/{{item.id}}">
+            <h4 class="list-group-item-heading ell">{{item.title}}</h4>
+          </a>
+          <!--带有html标签的代码添加到标签-->
+          <p class="list-group-item-text ell">{{item.author}} {{item.time}}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      好友列表
+      <a class="pull-right" routerLink="/all_users">更多>></a>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-4 col-xs-6" *ngFor="let item of data">
+        <p class="text-center"><i class="glyphicon glyphicon-user" style="font-size: 50px"></i></p>
+        <p class="text-center">{{item.username}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

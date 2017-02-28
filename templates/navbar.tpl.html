@@ -1,0 +1,26 @@
+<nav class="navbar navbar-blog navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+              data-target="#example-navbar-collapse">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" routerLink="/blog">
+        zxc/software developer in Bei Jing City</a>
+    </div>
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+      <ul class="nav navbar-nav pull-right">
+        <li routerLinkActive="active" *ngIf="status==null"><a routerLink="login">登录</a></li>
+        <li routerLinkActive="active" *ngIf="status==null"><a routerLink="register">注册</a></li>
+
+        <li routerLinkActive="active" *ngIf="status=='1'"><a>{{username}}</a></li>
+        <li *ngIf="status=='1'"><a href="javascript:;" (click)="goOut()" class="glyphicon glyphicon-log-out"></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--固定顶部导航, 下面要添加高度, 要不然会遮盖下面的内容。-->
+<p style="height: 60px"></p>

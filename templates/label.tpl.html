@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      擅长技能
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-4 col-xs-6" *ngFor="let item of data; let i = index;">
+        <p *ngIf="i < (data.length - 3)">
+          <span class="label label-info">{{item.name}}</span>
+        </p>
+        <!--后三个在底部,不需要p标签, 因为p标签有margin-bottom-->
+        <span *ngIf="i >= (data.length - 3)" class="label label-info">{{item.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>

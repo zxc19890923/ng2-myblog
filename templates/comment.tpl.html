@@ -1,0 +1,8 @@
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of data" style="border: none; border-top: 1px dotted #aaa">
+    <div>
+      <div innerHTML="{{item.content}}"></div>
+      <p style="color: #aaa;" class="text-right">作者: {{item.username}} 日期: {{item.time}}</p>
+    </div>
+  </li>
+</ul>

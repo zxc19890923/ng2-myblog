@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      最新动态
+    </div>
+  </div>
+  <div class="panel-body">
+    <div *ngFor="let item of data; let i = index">
+      <p *ngIf="i < data.length - 1" class="ell">
+        <a routerLink="/artical/{{i}}">{{i + 1}}. {{item.title}}</a>
+      </p>
+      <a class="ell" *ngIf="i >= data.length - 1" routerLink="/artical/{{item.id}}">{{i + 1}}. {{item.title}}</a>
+    </div>
+  </div>
+</div>
+<!--友情链接-->
+<p>
+  <a href="https://segmentfault.com" target="_blank">
+    <img src="./app/images/sf-ad.jpg" class="img-responsive"/>
+  </a>
+</p>
+<p>
+  <a href="http://www.jianshu.com/" target="_blank">
+    <img src="./app/images/js-ad.jpg" class="img-responsive"/>
+  </a>
+</p>
+<p>
+  <a href="https://zhihu.com/" target="_blank">
+    <img src="./app/images/zh-ad.jpg" class="img-responsive"/>
+  </a>
+</p>
+<p>
+  <a href="https://github.com/" target="_blank">
+    <img src="./app/images/gt-ad.png" class="img-responsive"/>
+  </a>
+</p>

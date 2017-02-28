@@ -1,0 +1,19 @@
+<div class="container">
+  <form #myForm="ngForm">
+    <label>标题</label>
+    <p>
+      <input type="text" class="form-control" [(ngModel)]="title" name="title" required/>
+    </p>
+    <label>作者</label>
+    <p>
+      <input type="text" class="form-control" [(ngModel)]="author" name="author" required/>
+    </p>
+    <label>内容</label>
+    <p>
+      <blog-quill (quillText)="childHandel($event)"></blog-quill>
+    </p>
+    <p class="text-right">
+      <button class="btn btn-primary" [disabled]="!myForm.form.valid" (click)="formHandel()">提交</button>
+    </p>
+  </form>
+</div>

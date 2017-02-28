@@ -1,0 +1,77 @@
+<div class="container" *ngFor="let item of data">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h3 class="text-center">{{item.title}}</h3>
+      <p class="text-right" style="color: #aaa">作者: {{item.author}}, 时间: {{item.time}}</p>
+      <div innerHTML="{{item.content}}"></div>
+
+      <p></p>
+      <p>
+        <a href="{{item.url}}">原文链接  | </a>
+        <a href="javascript:;" (click)="lgModal.show()" *ngIf="status">编辑  | </a>
+
+        <a *ngIf="username!= null" href="javascript:;" (click)="comment.show()">评论</a>
+        <a *ngIf="username==null" href="javascript:;" (click)="commentLogin()">评论</a>
+      </p>
+
+      <!--加载评论组件-->
+      <blog-comment [cid]="param"></blog-comment>
+    </div>
+  </div>
+</div>
+
+<!--弹窗口-->
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">修改文章</h4>
+        <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>标题</label>
+        <p>
+          <input type="text" [(ngModel)]="edit_title" name="edit_title" class="form-control" required/>
+        </p>
+        <label>作者</label>
+        <p>
+          <input type="text" [(ngModel)]="edit_author" name="edit_author" class="form-control" required/>
+        </p>
+        <label>内容</label>
+        <p>
+          <blog-quill (quillText)="editContent($event)" [editorContent]="edit_content"></blog-quill>
+        </p>
+        <p class="text-right">
+          <button class="btn btn-primary" (click)="editArtical()">修改</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--弹窗口-->
+<div bsModal #comment="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">评论</h4>
+        <button type="button" class="close pull-right" (click)="comment.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <blog-quill (quillText)="com($event)"></blog-quill>
+        </p>
+        <p class="text-right">
+          <button class="btn btn-primary" (click)="comments()">发表评论</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

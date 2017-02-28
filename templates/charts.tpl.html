@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      文章统计
+      <div class="btn-group pull-right" dropdown tooltip="添加文章">
+        <span class="glyphicon glyphicon-plus cursor" dropdownToggle></span>
+        <ul dropdownMenu role="menu" aria-labelledby="single-button">
+          <li role="menuitem"><a class="dropdown-item" routerLink="/ng2">angular2</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/node">node</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/express">express</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/wechat">微信小程序</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div [ng2-echarts]="option" style="min-height: 300px; width: 100%; "></div>
+    <br/>
+  </div>
+</div>
